@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        margin-top: 30px;
+      }
+      table {
+        width: 25vw;
+        margin-top: 50px;
+      }
+      table,
+      th,
+      td {
+        border: 2px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Funções - Tabuada</h1>
+      <button onclick="mostrarTabuada()">Mostrar Tabuada</button>
+      <button onclick="limparTabuada()">Limpar Tabuada</button>
+      <table>
+        <tr>
+          <th>[Número]</th>
+          <th>[Índice]</th>
+          <th>[Resultado]</th>
+        </tr>
+        <tbody id="output"></tbody>
+      </table>
+    </center>
+    <script>
+      /* 
+        ENUNCIADO
+        Pedir para o usuário digitar um valor, mostrar a tabada desse número de 1 à 1000.
+        Toda interface que vem da interface do usuário é string.
+      */
+
+      const output = document.getElementById('output')
+
+      function mostrarTabuada() {
+        let indice = 1
+        let numero = prompt('Digite um número')
+        let tabuada = ''
+
+        while (indice <= 1000) {
+          tabuada += `
+          <tr class="result">
+            <td>${numero}</td>
+            <td>${indice}</td>
+            <td>${indice * numero}</td>
+            </tr>`
+          indice++
+        }
+        output.innerHTML = tabuada
+      }
+
+      function limparTabuada() {
+        output.innerHTML = ''
+      }
+    </script>
+  </body>
+</html>
