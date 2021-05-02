@@ -1,0 +1,20 @@
+** ENUNCIADO **
+- IMC = peso / altura² - feito
+- Deve retornar um único número - feito
+- Deve gerar um erro se receber um parâmetro não número - feito
+- Deve retornar erro caso não receba nenhum parâmetro - feito
+
+** Função para Classificar o IMC **
+- Deve receber um número (IMC) - feito
+- Deve retornar uma string
+- Deve gerar um erro se receber um parâmetro não número - feito
+- Deve retornar erro caso não receba nenhum parâmetro - feito
+
+** Classificações do IMC **
+// Muito abaixo do peso - 16 a 16,9
+// Abaixo do peso       - 17 a 18,4
+// Peso normal          - 18,5 a 24,9
+// Acima do peso        - 25 a 29,9
+// Obesidade Grau I     - 30 a 34,9
+// Obesidade Grau II    - 35 a 40
+// Obesidade Grau III   - maior que 40

@@ -1,0 +1,5 @@
+** ENUNCIADO **
+- Pode receber um ou mais valores numéricos
+- Deve retornar um único número
+- Deve gerar um erro se receber um parâmetro não número
+- Deve retornar zero caso não receba nenhum parâmetro
