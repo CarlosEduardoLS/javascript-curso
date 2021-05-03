@@ -5,12 +5,12 @@
 // init();
 
 // Função anônima e auto-invocável
-(function () {
-  let isValid = true;
-  console.log("modal", isValid);
+;(function () {
+  let isValid = true
+  console.log('modal', isValid)
 
   function init() {
-    console.log("init do modal");
+    console.log('init do modal')
   }
-  init();
-})();
+  init()
+})()

@@ -2,15 +2,15 @@
 // ou seja, assim que o arquivo é carregado.
 
 // Função auto-invocável sem parâmetro
-(function () {
-  let exemplo = true;
-  console.log("Exemplo", exemplo);
-})();
+;(function () {
+  let exemplo = true
+  console.log('Exemplo', exemplo)
+})()
 
 // Função auto-invocável com parâmetro
-(function (win, doc) {
-  let exemplo = true;
-  console.log("Window", win);
-  console.log("Document", doc);
-  console.log("Exemplo", exemplo);
-})(window, document);
+;(function (win, doc) {
+  let exemplo = true
+  console.log('Window', win)
+  console.log('Document', doc)
+  console.log('Exemplo', exemplo)
+})(window, document)

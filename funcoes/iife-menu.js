@@ -6,12 +6,12 @@
 
 // Função Anônima e auto-invocável
 
-(function (win, doc) {
-  let isValid = false;
-  console.log("menu", isValid);
-  win.alert("Olá mundo!");
+;(function (win, doc) {
+  let isValid = false
+  console.log('menu', isValid)
+  win.alert('Olá mundo!')
   function init() {
-    console.log("init do menu");
+    console.log('init do menu')
   }
-  init();
-})(window, document);
+  init()
+})(window, document)
