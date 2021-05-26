@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigate DOM</title>
+    <style>
+      .container2 {
+        background: #ccc;
+        padding: 15px;
+      }
+      .container2 p {
+        border: 1px solid red;
+        padding: 10px;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Teste DOM</h1>
+    <!-- beforebegin -->
+    <div class="container2">
+      <!-- afterbegin -->
+      <p>paragrafo 1</p>
+      <p>paragrafo 2</p>
+      <p>paragrafo 3</p>
+      <!-- beforeend -->
+    </div>
+    <!-- afterend -->
+    <div class="container">
+      <p>Teste 1</p>
+      <p>Lorem <a href="#">link </a>.</p>
+      <p>Teste 2</p>
+      <h2>Lista</h2>
+      <ul>
+        <li>Item 1</li>
+        <li>
+          Item 2
+          <ul>
+            <li>Item 2.a</li>
+            <li>Item 2.b</li>
+            <li>Item 2.c</li>
+            <li></li>
+          </ul>
+        </li>
+        <li>Item <a href="#">link</a></li>
+      </ul>
+    </div>
+    <script>
+      const title = document.createElement('h1')
+      const atributo = document.createAttribute('id')
+      atributo.value = 'title1'
+      title.setAttributeNode(atributo)
+      title.setAttribute('title', 'title inserido dinamicamente')
+      title.setAttribute('style', 'color: red')
+      const text = document.createTextNode('criar nós no DOM')
+      title.appendChild(text)
+      title.textContent = 'Texto inserido com textContent'
+      console.log(title)
+      // document.body.appendChild(title)
+      // document.querySelector('container').prepend(title, 'Text Novo')
+      const container = document.querySelector('.container')
+      container.appendChild(title)
+      const title2 = document.createElement('h1')
+      title2.textContent = 'Titulo 2'
+      const list = document.querySelector('ul')
+      container.insertBefore(title2, list)
+      container.insertBefore(title2, container.firstChild)
+      let sublevel = document.querySelector('ul ul')
+      sublevel = sublevel.cloneNode(true)
+      const h2 = document.querySelector('h2')
+      container.insertBefore(sublevel, h2.nextElementSibling)
+      const segundoParagrafo =
+        container.firstElementChild.nextElementSibling.nextElementSibling
+      const span = document.createElement('span')
+      span.textContent = 'span dinamica'
+      segundoParagrafo.before(span)
+      segundoParagrafo.after(span)
+      const container2 = document.querySelector('.container2')
+      // beforebegin, afterbegin, beforeend, afterend
+      container2.insertAdjacentHTML(
+        'beforebegin',
+        '<b>Texto Inserido adjacent HTML</b>'
+      )
+      container2.insertAdjacentHTML(
+        'afterbegin',
+        '<b>Texto Inserido adjacent HTML</b>'
+      )
+      container2.insertAdjacentHTML(
+        'beforeend',
+        '<b>Texto Inserido adjacent HTML</b>'
+      )
+      container2.insertAdjacentHTML(
+        'afterend',
+        '<b>Texto Inserido adjacent HTML</b>'
+      )
+
+      container2.insertAdjacentText('beforebegin', 'Texto Inserido adjacent TEXT')
+      container2.insertAdjacentText('afterbegin', 'Texto Inserido adjacent TEXT')
+      container2.insertAdjacentText('beforeend', 'Texto Inserido adjacent TEXT')
+      container2.insertAdjacentText('afterend', 'Texto Inserido adjacent TEXT')
+
+      const em = document.createElement('em')
+      em.textContent = 'Texto Inserido adjacent ELEMENT'
+      container2.insertAdjacentElement('beforebegin', em)
+      container2.insertAdjacentElement('afterbegin', em)
+      container2.insertAdjacentElement('beforeend', em)
+      container2.insertAdjacentElement('afterend', em)
+
+      // list.remove()
+      // parentNode.removeChild(list)
+      list.parentElement.removeChild(list)
+      const parent = document.body
+      const newChild = container.querySelector('h1')
+      const oldChild = document.querySelector('h1')
+      parent.replaceChild(newChild, oldChild)
+    </script>
+  </body>
+</html>
